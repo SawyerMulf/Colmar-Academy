@@ -26,6 +26,16 @@ body {
   padding: 32px 0;
 }
 
+@media only screen and (max-width: 750px) {
+  header, .learn-something, .keep-practicing, .start-learning, .thesis-exhibit, footer {
+    position: absolute;
+  }
+
+  .title-vert-margin {
+    padding: 32px 0 16px 0;
+  }
+}
+
 
 /* Header Section */
 
@@ -33,6 +43,9 @@ header {
   height: 64px;
   background-color: white;
   display: flex;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 .header-left {
@@ -72,12 +85,30 @@ header {
   margin-right: 16px;
 }
 
+.header-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .header-mobile {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .header-left, .header-right {
+    display: none;
+  }
+}
+
 /* Learn Something Section */
 
 .learn-something {
   background-color: #e0e0e0;
   display: flex;
   height: 43rem;
+  position: relative;
+  top: 64px;
 }
 
 .learn-something img {
@@ -110,12 +141,47 @@ header {
   background-color: #2d2d2d;
 }
 
+@media only screen and (max-width: 750px) {
+  .learn-something {
+    height: auto;
+    padding-bottom: 32px;
+  }
+
+  .learn-something, .learn-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .learn-something img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin-bottom: 32px;
+  }
+
+  .learn-text {
+    width: 100%;
+  }
+
+  #learn-text-middle {
+    margin: 0;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  .learn-button {
+    width: 90%;
+  }
+}
+
 /* Keep Practicing Section */
 
 .keep-practicing {
   background-color: white;
   height: 43rem;
   display: flex;
+  position: relative;
+  top: 64px;
 }
 
 .practicing-left {
@@ -165,11 +231,51 @@ header {
   margin: 12px 0;
 }
 
+#mobile-img {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .keep-practicing {
+    height: auto;
+  }
+
+  .practicing-left {
+    display: none;
+  }
+
+  .practicing-right {
+    width: 100%;
+  }
+
+  .practicing-right-segment {
+    flex-direction: column;
+  }
+
+  .practicing-right-segment img {
+    display: none;
+  }
+
+  #mobile-img {
+    display: block;
+    width: 92%;
+    height: auto;
+    margin: 16px auto;
+  }
+
+  .right-segment-text {
+    padding-left: 32px;
+    padding-bottom: 32px;
+  }
+}
+
 /* Start Learning Section */
 
 .start-learning {
   background-color: #e0e0e0;
   padding-bottom: 32px;
+  position: relative;
+  top: 64px;
 }
 
 #start-learning-text {
@@ -210,10 +316,48 @@ header {
   padding: 18px 0;
 }
 
+.learning-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .start-learning {
+    height: auto;
+  }
+
+  .learning-top-row, .learning-bottom-row {
+    display: none;
+  }
+
+  .learning-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .learning-mobile-segment {
+    width: 92%;
+    text-align: left;
+    background-color: #bababa;
+    margin-bottom: 8px;
+    transition: background-color 200ms ease 0s;
+  }
+
+  .learning-mobile-segment p {
+    padding: 16px 16px 24px 16px;
+  }
+
+  .learning-mobile-segment:hover {
+    background-color: #adadad;
+  }
+}
+
 /* Thesis Exhibit Section */
 
 .thesis-exhibit {
   background-color: #e8e8e8;
+  position: relative;
+  top: 64px;
 }
 
 .thesis-content {
@@ -222,6 +366,10 @@ header {
 
 #thesis-exhibit-text {
   text-align: center;
+}
+
+#thesis-exhibit-text-mobile {
+  display: none;
 }
 
 .thesis-left {
@@ -262,11 +410,38 @@ header {
   padding: 24px 0 12px 0;
 }
 
+#thesis-video-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  #thesis-exhibit-text {
+    display: none;
+  }
+
+  #thesis-exhibit-text-mobile {
+    display: block;
+  }
+
+  .thesis-content {
+    display: none;
+  }
+
+  #thesis-video-mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 24px;
+  }
+}
+
 /* Footer Section */
 
 footer {
   padding: 16px 24px;
   display: flex;
+  position: relative;
+  top: 64px;
 }
 
 .footer-left {
@@ -279,4 +454,10 @@ footer {
 
 .footer-right nav p {
   margin-left: 16px;
+}
+
+@media only screen and (max-width: 750px) {
+  .footer-right {
+    display: none;
+  }
 }
